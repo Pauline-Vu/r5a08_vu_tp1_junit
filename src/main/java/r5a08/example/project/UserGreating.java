@@ -4,6 +4,6 @@ public class UserGreating {
     private String nom;
 
     public void formatGreeting(){
-        // essai
+        // essai 1
     }
 }
