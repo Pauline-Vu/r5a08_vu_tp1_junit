@@ -1,4 +1,3 @@
-# r5a8_junit_tests
+# VU Pauline Hesperides
 
-## Dépôt pour les séances de tavail pratique pour la ressource R5A08 qualité de développement
-
+## 
