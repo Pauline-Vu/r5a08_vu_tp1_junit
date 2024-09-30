@@ -6,7 +6,11 @@ public class UserGreating {
     public UserGreating() {
             
     }
-    public String formatGreeting(String n){
-        return "Bonjour, " + n;
+    public String formatGreeting(String name){
+
+        if (name.isEmpty())
+            throw new UserGreatingFailureException("name is empty");
+
+        return  "Bonjour, " + name ;
     }
 }
