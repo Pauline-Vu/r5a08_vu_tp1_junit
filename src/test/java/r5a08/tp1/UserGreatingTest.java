@@ -7,19 +7,6 @@ import org.junit.jupiter.api.Test;
 public class UserGreatingTest {
 
     @Test
-    public void should_return_correct_greating_when_pauline() {
-        // Arrange
-        UserGreating userGreating = new UserGreating();
-        String name = "Pauline";
-        // Act
-        String expected = "Bonjour, Pauline";
-        String actual = userGreating.formatGreeting(name);
-
-        // Assert
-        assertThat(actual).isEqualTo(expected);
-    }
-
-    @Test
     public void should_return_correct_greating_when_correct_name_is_provided() {
         // Arrange
         UserGreating userGreating = new UserGreating();
@@ -34,16 +21,26 @@ public class UserGreatingTest {
     }
 
     @Test
-    public void should_throw_exception_when__parameter_name_provided_is_empty() {
+    public void should_throw_exception_when_parameter_name_provided_is_empty() {
         // Arrange
-        UserGreating ug = new UserGreating();
-        String n = "";
+        UserGreating UserGreating = new UserGreating();
+        String name = "";
 
         // Act , Assert
         assertThatExceptionOfType(UserGreatingFailureException.class)
-                .isThrownBy(()->ug.formatGreeting(n));
+                .isThrownBy(() -> UserGreating.formatGreeting(name));
 
     }
 
+    @Test
+    public void should_throw_exception_when_name_is_more_than_ten_characters() {
+        // Arrange
+        UserGreating UserGreating = new UserGreating();
+        String name = "treslongprenom";
 
+        // Act , Assert
+        assertThatExceptionOfType(UserGreatingFailureException.class)
+                .isThrownBy(() -> UserGreating.formatGreeting(name));
+
+    }
 }
