@@ -8,13 +8,14 @@ public class UserGreatingTest {
     @Test
     public void test() {
         UserGreating ug1 = new UserGreating();
-        Assertions.assertThat(ug1.formatGreeting("nom")).is
+        Assertions.assertThat(ug1.formatGreeting("nom")).
     }
 
     @Test
     public void testEmptyName() {
         UserGreating ug2 = new UserGreating();
         Assertions.assertThat(ug2.formatGreeting("")).isEmpty();
+
     }
 
     @Test
