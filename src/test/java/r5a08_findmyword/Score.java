@@ -1,28 +1,21 @@
 package r5a08_findmyword;
 
 public class Score {
-    private String correctWord;
-    private Letter[] letters;  // Tableau pour stocker les résultats des lettres
 
-    public Score(String correctWord) {
-        this.correctWord = correctWord;
-        this.letters = new Letter[correctWord.length()];  
+    private final String correct;
+    private Letter result = Letter.INCORRECT;
+
+    public Score(String correct) {
+        this.correct=correct;
     }
 
-    // Évalue une lettre à un indice donné
-    public void assess(int index, String attempt) {
-        char letterGuess = attempt.charAt(index); 
-        char letterCorrect = correctWord.charAt(index); 
+    public Letter letter(int i) {
+        return result;
+    }
 
-        if (letterGuess == letterCorrect) {
-            letters[index] = Letter.CORRECT;  
-        } else {
-            letters[index] = Letter.INCORRECT;  
+    public void assess(int position, String attempt) {
+        if (this.correct.charAt(position)==attempt.charAt(position)){
+            result = Letter.CORRECT;
         }
-    }
-
-    // Récupère le score de la lettre à un certain index
-    public Letter letter(int index) {
-        return letters[index];
     }
 }
