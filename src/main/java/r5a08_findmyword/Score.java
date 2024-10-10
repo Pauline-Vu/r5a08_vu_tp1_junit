@@ -1,8 +1,5 @@
 package r5a08_findmyword;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Score {
 
     private  String correctWord;
